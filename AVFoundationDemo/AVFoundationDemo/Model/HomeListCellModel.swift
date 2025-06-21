@@ -30,6 +30,8 @@ struct HomeListCellModel {
     /// cell标题显示的值
     var rowTitle = ""
     var rowValue = ""
+    
+    var classType: AVBaseDemoViewController.Type?
 }
 
 /// 首页, TableView 每一个cell的类型

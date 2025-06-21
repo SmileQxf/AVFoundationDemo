@@ -13,6 +13,9 @@
 		1798169A2E065154004A2553 /* HomeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179816982E065154004A2553 /* HomeListCell.xib */; };
 		1798169C2E0651E0004A2553 /* ColorsConfiger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798169B2E0651E0004A2553 /* ColorsConfiger.swift */; };
 		1798169F2E0654A0004A2553 /* chun_tian_li.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1798169E2E0654A0004A2553 /* chun_tian_li.mp3 */; };
+		179816A62E06585B004A2553 /* AVBaseDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179816A52E06585B004A2553 /* AVBaseDemoViewController.swift */; };
+		179816AC2E06598F004A2553 /* AVAssetDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179816AA2E06598F004A2553 /* AVAssetDemoViewController.swift */; };
+		179816AD2E06598F004A2553 /* AVAssetDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179816AB2E06598F004A2553 /* AVAssetDemoViewController.xib */; };
 		E514B294C5D12AD5F7AE1657 /* Pods_AVFoundationDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C36C5C62B16A010C718198 /* Pods_AVFoundationDemo.framework */; };
 		F1BC08801FCA89F4005C940B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC087F1FCA89F4005C940B /* AppDelegate.swift */; };
 		F1BC08821FCA89F4005C940B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC08811FCA89F4005C940B /* HomeViewController.swift */; };
@@ -30,6 +33,9 @@
 		179816982E065154004A2553 /* HomeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeListCell.xib; sourceTree = "<group>"; };
 		1798169B2E0651E0004A2553 /* ColorsConfiger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsConfiger.swift; sourceTree = "<group>"; };
 		1798169E2E0654A0004A2553 /* chun_tian_li.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chun_tian_li.mp3; sourceTree = "<group>"; };
+		179816A52E06585B004A2553 /* AVBaseDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVBaseDemoViewController.swift; sourceTree = "<group>"; };
+		179816AA2E06598F004A2553 /* AVAssetDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAssetDemoViewController.swift; sourceTree = "<group>"; };
+		179816AB2E06598F004A2553 /* AVAssetDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVAssetDemoViewController.xib; sourceTree = "<group>"; };
 		25C36C5C62B16A010C718198 /* Pods_AVFoundationDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVFoundationDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B450911BCA905790F84CB06 /* Pods-AVFoundationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVFoundationDemo.debug.xcconfig"; path = "Target Support Files/Pods-AVFoundationDemo/Pods-AVFoundationDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A608474649C44C5AE177B56D /* Pods-AVFoundationDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVFoundationDemo.release.xcconfig"; path = "Target Support Files/Pods-AVFoundationDemo/Pods-AVFoundationDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +97,39 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		179816A02E065714004A2553 /* MoreFeatures */ = {
+			isa = PBXGroup;
+			children = (
+				179816A12E065728004A2553 /* AVAsset */,
+			);
+			path = MoreFeatures;
+			sourceTree = "<group>";
+		};
+		179816A12E065728004A2553 /* AVAsset */ = {
+			isa = PBXGroup;
+			children = (
+				179816A92E065984004A2553 /* View */,
+			);
+			path = AVAsset;
+			sourceTree = "<group>";
+		};
+		179816A42E065849004A2553 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				179816A52E06585B004A2553 /* AVBaseDemoViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		179816A92E065984004A2553 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				179816AA2E06598F004A2553 /* AVAssetDemoViewController.swift */,
+				179816AB2E06598F004A2553 /* AVAssetDemoViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		53707686C28C081E598462B3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +160,8 @@
 		F1BC087E1FCA89F4005C940B /* AVFoundationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				179816A42E065849004A2553 /* Main */,
+				179816A02E065714004A2553 /* MoreFeatures */,
 				179816922E064DB0004A2553 /* Model */,
 				179816952E065141004A2553 /* View */,
 				F1BC087F1FCA89F4005C940B /* AppDelegate.swift */,
@@ -208,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1BC088A1FCA89F4005C940B /* LaunchScreen.storyboard in Resources */,
+				179816AD2E06598F004A2553 /* AVAssetDemoViewController.xib in Resources */,
 				1798169A2E065154004A2553 /* HomeListCell.xib in Resources */,
 				F1BC08871FCA89F4005C940B /* Assets.xcassets in Resources */,
 				F1BC08851FCA89F4005C940B /* Main.storyboard in Resources */,
@@ -272,7 +314,9 @@
 				F1BC08821FCA89F4005C940B /* HomeViewController.swift in Sources */,
 				F1BC08801FCA89F4005C940B /* AppDelegate.swift in Sources */,
 				179816942E064DE5004A2553 /* HomeListCellModel.swift in Sources */,
+				179816AC2E06598F004A2553 /* AVAssetDemoViewController.swift in Sources */,
 				179816912E064C9F004A2553 /* HomeBaseViewController.swift in Sources */,
+				179816A62E06585B004A2553 /* AVBaseDemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
