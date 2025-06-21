@@ -28,6 +28,15 @@ class AVAudioPlayerDemoViewController: AVBaseDemoViewController {
     var isPlaying = false
     var progressTimer: Timer?
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.player?.pause()
+        self.player?.delegate = nil
+        self.player = nil
+        
+        stopProgressTimer()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,11 +90,26 @@ class AVAudioPlayerDemoViewController: AVBaseDemoViewController {
     
     private func setupProgressSlider() {
         progressSlider.value = 0
+        // 按下时暂停播放
+        progressSlider.addTarget(self, action: #selector(sliderTouchDown(_:)), for: .touchDown)
+        // 拖动时更新预览时间
         progressSlider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        // 松开时恢复播放
         progressSlider.addTarget(self, action: #selector(sliderTouchUp(_:)), for: [.touchUpInside, .touchUpOutside])
     }
     
     // MARK: - Slider Actions
+    @objc private func sliderTouchDown(_ slider: UISlider) {
+        guard let player = player else { return }
+        
+        if player.isPlaying {
+            player.pause()
+            
+            // isPlaying = false
+            self.playOrPauseButton.setImage(UIImage.play, for: .normal)
+            stopProgressTimer()
+        }
+    }
     @objc private func sliderValueChanged(_ slider: UISlider) {
         guard let player = player else { return }
         
@@ -99,9 +123,15 @@ class AVAudioPlayerDemoViewController: AVBaseDemoViewController {
         let newTime = Double(slider.value) * player.duration
         player.currentTime = newTime
         
-        if isPlaying {
+        if isPlaying {  // 如果原本是播放状态，松开后继续播放
             player.play()
+            startProgressTimer()
+            
+            // self.isPlaying = true
+            self.playOrPauseButton.setImage(UIImage.pause, for: .normal)
         }
+        
+        updateTimeLabels()
     }
     
     
@@ -151,6 +181,10 @@ class AVAudioPlayerDemoViewController: AVBaseDemoViewController {
         durationLabel.text = ""
         durationLabel.numberOfLines = 1
         durationLabel.adjustsFontSizeToFitWidth = true
+    }
+    
+    deinit {
+        debugPrint("AVAudioPlayerDemoViewController 正常销毁")
     }
 }
 
