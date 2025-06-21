@@ -31,7 +31,12 @@ class HomeBaseViewController: UIViewController {
         assetModel.rowTitle = "AVAsset元数据"
         assetModel.classType = AVAssetDemoViewController.self
         
+        var audioPlayModel = HomeListCellModel(mType: .mAudioPlay)
+        audioPlayModel.rowTitle = "播放音频"
+        audioPlayModel.classType = AVAudioPlayerDemoViewController.self
+        
         audioGroup.data.append(assetModel)
+        audioGroup.data.append(audioPlayModel)
         
         
         self.dataSource = [

@@ -37,7 +37,7 @@ struct HomeListCellModel {
 /// 首页, TableView 每一个cell的类型
 enum HomeListCellModelType {
     case mAVAsset
-    case deviceName
+    case mAudioPlay
     case deviceMac
     case serialNumber
     case storageSpace

@@ -16,6 +16,9 @@
 		179816A62E06585B004A2553 /* AVBaseDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179816A52E06585B004A2553 /* AVBaseDemoViewController.swift */; };
 		179816AC2E06598F004A2553 /* AVAssetDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179816AA2E06598F004A2553 /* AVAssetDemoViewController.swift */; };
 		179816AD2E06598F004A2553 /* AVAssetDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179816AB2E06598F004A2553 /* AVAssetDemoViewController.xib */; };
+		179816B22E066212004A2553 /* AVAudioPlayerDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179816B02E066212004A2553 /* AVAudioPlayerDemoViewController.swift */; };
+		179816B32E066212004A2553 /* AVAudioPlayerDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179816B12E066212004A2553 /* AVAudioPlayerDemoViewController.xib */; };
+		179816B82E066793004A2553 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179816B72E066793004A2553 /* ImageExtension.swift */; };
 		E514B294C5D12AD5F7AE1657 /* Pods_AVFoundationDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C36C5C62B16A010C718198 /* Pods_AVFoundationDemo.framework */; };
 		F1BC08801FCA89F4005C940B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC087F1FCA89F4005C940B /* AppDelegate.swift */; };
 		F1BC08821FCA89F4005C940B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC08811FCA89F4005C940B /* HomeViewController.swift */; };
@@ -36,6 +39,9 @@
 		179816A52E06585B004A2553 /* AVBaseDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVBaseDemoViewController.swift; sourceTree = "<group>"; };
 		179816AA2E06598F004A2553 /* AVAssetDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAssetDemoViewController.swift; sourceTree = "<group>"; };
 		179816AB2E06598F004A2553 /* AVAssetDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVAssetDemoViewController.xib; sourceTree = "<group>"; };
+		179816B02E066212004A2553 /* AVAudioPlayerDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioPlayerDemoViewController.swift; sourceTree = "<group>"; };
+		179816B12E066212004A2553 /* AVAudioPlayerDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVAudioPlayerDemoViewController.xib; sourceTree = "<group>"; };
+		179816B72E066793004A2553 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		25C36C5C62B16A010C718198 /* Pods_AVFoundationDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVFoundationDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B450911BCA905790F84CB06 /* Pods-AVFoundationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVFoundationDemo.debug.xcconfig"; path = "Target Support Files/Pods-AVFoundationDemo/Pods-AVFoundationDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A608474649C44C5AE177B56D /* Pods-AVFoundationDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVFoundationDemo.release.xcconfig"; path = "Target Support Files/Pods-AVFoundationDemo/Pods-AVFoundationDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				179816A12E065728004A2553 /* AVAsset */,
+				179816AE2E065FD6004A2553 /* PlayAudio */,
 			);
 			path = MoreFeatures;
 			sourceTree = "<group>";
@@ -128,6 +135,39 @@
 				179816AB2E06598F004A2553 /* AVAssetDemoViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		179816AE2E065FD6004A2553 /* PlayAudio */ = {
+			isa = PBXGroup;
+			children = (
+				179816AF2E065FE9004A2553 /* View */,
+			);
+			path = PlayAudio;
+			sourceTree = "<group>";
+		};
+		179816AF2E065FE9004A2553 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				179816B02E066212004A2553 /* AVAudioPlayerDemoViewController.swift */,
+				179816B12E066212004A2553 /* AVAudioPlayerDemoViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		179816B62E066780004A2553 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				179816B72E066793004A2553 /* ImageExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		179816B92E066796004A2553 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				179816B62E066780004A2553 /* Extension */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		53707686C28C081E598462B3 /* Pods */ = {
@@ -160,6 +200,7 @@
 		F1BC087E1FCA89F4005C940B /* AVFoundationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				179816B92E066796004A2553 /* Tools */,
 				179816A42E065849004A2553 /* Main */,
 				179816A02E065714004A2553 /* MoreFeatures */,
 				179816922E064DB0004A2553 /* Model */,
@@ -248,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				179816B32E066212004A2553 /* AVAudioPlayerDemoViewController.xib in Resources */,
 				F1BC088A1FCA89F4005C940B /* LaunchScreen.storyboard in Resources */,
 				179816AD2E06598F004A2553 /* AVAssetDemoViewController.xib in Resources */,
 				1798169A2E065154004A2553 /* HomeListCell.xib in Resources */,
@@ -309,8 +351,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				179816B22E066212004A2553 /* AVAudioPlayerDemoViewController.swift in Sources */,
 				1798169C2E0651E0004A2553 /* ColorsConfiger.swift in Sources */,
 				179816992E065154004A2553 /* HomeListCell.swift in Sources */,
+				179816B82E066793004A2553 /* ImageExtension.swift in Sources */,
 				F1BC08821FCA89F4005C940B /* HomeViewController.swift in Sources */,
 				F1BC08801FCA89F4005C940B /* AppDelegate.swift in Sources */,
 				179816942E064DE5004A2553 /* HomeListCellModel.swift in Sources */,
