@@ -32,11 +32,18 @@ class HomeBaseViewController: UIViewController {
         assetModel.classType = AVAssetDemoViewController.self
         
         var audioPlayModel = HomeListCellModel(mType: .mAudioPlay)
-        audioPlayModel.rowTitle = "播放音频"
+        audioPlayModel.rowTitle = "AVAudioPlayer播放音频"
         audioPlayModel.classType = AVAudioPlayerDemoViewController.self
+        
+        var audioEngineModel = HomeListCellModel(mType: .mAudioEngine)
+        audioEngineModel.rowTitle = "AVAudioEngine播放音频+可视化音频信号"
+        audioEngineModel.classType = AVAudioEngineDemoViewController.self
+        
+        
         
         audioGroup.data.append(assetModel)
         audioGroup.data.append(audioPlayModel)
+        audioGroup.data.append(audioEngineModel)
         
         
         self.dataSource = [

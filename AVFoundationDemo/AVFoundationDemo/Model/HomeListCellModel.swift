@@ -38,7 +38,7 @@ struct HomeListCellModel {
 enum HomeListCellModelType {
     case mAVAsset
     case mAudioPlay
-    case deviceMac
+    case mAudioEngine
     case serialNumber
     case storageSpace
 }
