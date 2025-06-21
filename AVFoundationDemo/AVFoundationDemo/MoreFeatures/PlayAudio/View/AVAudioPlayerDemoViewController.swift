@@ -17,18 +17,24 @@ class AVAudioPlayerDemoViewController: AVBaseDemoViewController {
     @IBOutlet weak var previousPlayerButton: UIButton!
     /// 下一曲按钮
     @IBOutlet weak var nextPlayerButton: UIButton!
+    
+    @IBOutlet weak var progressSlider: UISlider!
+    @IBOutlet weak var currentTimeLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
 
     
 
     var player: AVAudioPlayer?
     var isPlaying = false
-    
+    var progressTimer: Timer?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUI()
         setupAudio()
+        setupProgressSlider()
     }
     
 
@@ -54,7 +60,7 @@ class AVAudioPlayerDemoViewController: AVBaseDemoViewController {
         self.playOrPauseButton.setImage(UIImage.play, for: .normal)
     }
     
-    
+    // MARK: - Button Actions
     @IBAction func playOrPauseBtnClick(_ sender: UIButton) {
         
         guard let player = player else { return }
@@ -63,14 +69,89 @@ class AVAudioPlayerDemoViewController: AVBaseDemoViewController {
         
         if player.isPlaying {
             player.pause()
+            stopProgressTimer()
         } else {
             player.play()
+            startProgressTimer()
         }
         
         sender.setImage(isPlaying ? UIImage.pause : UIImage.play, for: .normal)
-        
     }
     
+    
+    private func setupProgressSlider() {
+        progressSlider.value = 0
+        progressSlider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        progressSlider.addTarget(self, action: #selector(sliderTouchUp(_:)), for: [.touchUpInside, .touchUpOutside])
+    }
+    
+    // MARK: - Slider Actions
+    @objc private func sliderValueChanged(_ slider: UISlider) {
+        guard let player = player else { return }
+        
+        let newTime = Double(slider.value) * player.duration
+        currentTimeLabel.text = formatTime(newTime)
+    }
+    
+    @objc private func sliderTouchUp(_ slider: UISlider) {
+        guard let player = player else { return }
+        
+        let newTime = Double(slider.value) * player.duration
+        player.currentTime = newTime
+        
+        if isPlaying {
+            player.play()
+        }
+    }
+    
+    
+    // MARK: - Progress Tracking
+    private func startProgressTimer() {
+        progressTimer?.invalidate()
+        progressTimer = Timer.scheduledTimer(
+            timeInterval: 0.1,
+            target: self,
+            selector: #selector(updateProgress),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+    
+    private func stopProgressTimer() {
+        progressTimer?.invalidate()
+        progressTimer = nil
+    }
+    
+    @objc private func updateProgress() {
+        guard let player = player else { return }
+        
+        progressSlider.value = Float(player.currentTime / player.duration)
+        updateTimeLabels()
+    }
+    
+    private func updateTimeLabels() {
+        guard let player = player else { return }
+        
+        currentTimeLabel.text = formatTime(player.currentTime)
+        durationLabel.text = formatTime(player.duration)
+    }
+    
+    private func formatTime(_ time: TimeInterval) -> String {
+        let minutes = Int(time) / 60
+        let seconds = Int(time) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+    
+    private func setupUI() {
+        
+        currentTimeLabel.text = ""
+        currentTimeLabel.numberOfLines = 1
+        currentTimeLabel.adjustsFontSizeToFitWidth = true
+        
+        durationLabel.text = ""
+        durationLabel.numberOfLines = 1
+        durationLabel.adjustsFontSizeToFitWidth = true
+    }
 }
 
 
@@ -79,6 +160,7 @@ extension AVAudioPlayerDemoViewController: AVAudioPlayerDelegate {
     /// 音频播放器已完成播放
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("音频播放器已完成播放player:\(player) flag:\(flag)")
+        self.isPlaying = false
         self.playOrPauseButton.setImage(UIImage.play, for: .normal)
     }
     
