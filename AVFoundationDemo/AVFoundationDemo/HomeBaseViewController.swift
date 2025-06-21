@@ -17,15 +17,37 @@ class HomeBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.loadDataSource()
+        
         setBaseViewUI()
     }
     
+    func loadDataSource() {
+        
+        var audioGroup = HomeListGroupModel(mType: .audio)
+        audioGroup.groupTitle = "音频"
+        
+        var assetModel = HomeListCellModel(mType: .mAVAsset)
+        assetModel.rowTitle = "AVAsset元数据"
+        
+        audioGroup.data.append(assetModel)
+        
+        
+        self.dataSource = [
+            audioGroup
+        ]
+    }
 
     func setBaseViewUI() {
         
         self.view.backgroundColor = .white
         
         
+        tableView.contentInsetAdjustmentBehavior = .never
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.register(UINib(nibName: kHomeListCell_ID, bundle: nil), forCellReuseIdentifier: kHomeListCell_ID)
         self.tableView.dataSource = self
         
         self.view.addSubview(tableView)
@@ -52,7 +74,12 @@ extension HomeBaseViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: kHomeListCell_ID) as? HomeListCell else {
+            return UITableViewCell()
+        }
+        cell.setInfoAvatar(dataSource[indexPath.section].data[indexPath.row])
+        
+        return cell
     }
     
     
