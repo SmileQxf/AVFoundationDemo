@@ -138,6 +138,7 @@ class AVAudioEngineDemoViewController: AVBaseDemoViewController {
             debugPrint("---音量meterLevel:\(meterLevel)")
             DispatchQueue.main.async {
                 //self.meterLevel = self.isPlaying ? meterLevel : 0
+                self.meterView.updateLevel(CGFloat(meterLevel))
             }
         //}
     }
