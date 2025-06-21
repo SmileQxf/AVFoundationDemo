@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1798168B2E064B26004A2553 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179816892E064B26004A2553 /* CameraController.swift */; };
-		1798168E2E064B53004A2553 /* CameraTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798168D2E064B53004A2553 /* CameraTestViewController.swift */; };
-		1798168F2E064B53004A2553 /* CameraTestViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1798168C2E064B53004A2553 /* CameraTestViewController.storyboard */; };
+		179816912E064C9F004A2553 /* HomeBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179816902E064C9F004A2553 /* HomeBaseViewController.swift */; };
+		179816942E064DE5004A2553 /* HomeListCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179816932E064DE5004A2553 /* HomeListCellModel.swift */; };
+		179816992E065154004A2553 /* ABHEditInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179816972E065154004A2553 /* ABHEditInfoCell.swift */; };
+		1798169A2E065154004A2553 /* ABHEditInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179816982E065154004A2553 /* ABHEditInfoCell.xib */; };
+		1798169C2E0651E0004A2553 /* ColorsConfiger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798169B2E0651E0004A2553 /* ColorsConfiger.swift */; };
+		E514B294C5D12AD5F7AE1657 /* Pods_AVFoundationDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C36C5C62B16A010C718198 /* Pods_AVFoundationDemo.framework */; };
 		F1BC08801FCA89F4005C940B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC087F1FCA89F4005C940B /* AppDelegate.swift */; };
-		F1BC08821FCA89F4005C940B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC08811FCA89F4005C940B /* ViewController.swift */; };
+		F1BC08821FCA89F4005C940B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BC08811FCA89F4005C940B /* HomeViewController.swift */; };
 		F1BC08851FCA89F4005C940B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BC08831FCA89F4005C940B /* Main.storyboard */; };
 		F1BC08871FCA89F4005C940B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BC08861FCA89F4005C940B /* Assets.xcassets */; };
 		F1BC088A1FCA89F4005C940B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BC08881FCA89F4005C940B /* LaunchScreen.storyboard */; };
@@ -20,12 +23,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		179816892E064B26004A2553 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
-		1798168C2E064B53004A2553 /* CameraTestViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CameraTestViewController.storyboard; sourceTree = "<group>"; };
-		1798168D2E064B53004A2553 /* CameraTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTestViewController.swift; sourceTree = "<group>"; };
+		179816902E064C9F004A2553 /* HomeBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBaseViewController.swift; sourceTree = "<group>"; };
+		179816932E064DE5004A2553 /* HomeListCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListCellModel.swift; sourceTree = "<group>"; };
+		179816972E065154004A2553 /* ABHEditInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABHEditInfoCell.swift; sourceTree = "<group>"; };
+		179816982E065154004A2553 /* ABHEditInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ABHEditInfoCell.xib; sourceTree = "<group>"; };
+		1798169B2E0651E0004A2553 /* ColorsConfiger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsConfiger.swift; sourceTree = "<group>"; };
+		25C36C5C62B16A010C718198 /* Pods_AVFoundationDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVFoundationDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B450911BCA905790F84CB06 /* Pods-AVFoundationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVFoundationDemo.debug.xcconfig"; path = "Target Support Files/Pods-AVFoundationDemo/Pods-AVFoundationDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		A608474649C44C5AE177B56D /* Pods-AVFoundationDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVFoundationDemo.release.xcconfig"; path = "Target Support Files/Pods-AVFoundationDemo/Pods-AVFoundationDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F1BC087C1FCA89F4005C940B /* AVFoundationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVFoundationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BC087F1FCA89F4005C940B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F1BC08811FCA89F4005C940B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F1BC08811FCA89F4005C940B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F1BC08841FCA89F4005C940B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1BC08861FCA89F4005C940B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1BC08891FCA89F4005C940B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,20 +49,45 @@
 			files = (
 				F1BC08971FCA9A20005C940B /* Photos.framework in Frameworks */,
 				F1BC08951FCA9A13005C940B /* AVFoundation.framework in Frameworks */,
+				E514B294C5D12AD5F7AE1657 /* Pods_AVFoundationDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1798168A2E064B26004A2553 /* Camera */ = {
+		179816922E064DB0004A2553 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1798168D2E064B53004A2553 /* CameraTestViewController.swift */,
-				1798168C2E064B53004A2553 /* CameraTestViewController.storyboard */,
-				179816892E064B26004A2553 /* CameraController.swift */,
+				179816932E064DE5004A2553 /* HomeListCellModel.swift */,
 			);
-			path = Camera;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		179816952E065141004A2553 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				179816962E06514A004A2553 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		179816962E06514A004A2553 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				179816972E065154004A2553 /* ABHEditInfoCell.swift */,
+				179816982E065154004A2553 /* ABHEditInfoCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		53707686C28C081E598462B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B450911BCA905790F84CB06 /* Pods-AVFoundationDemo.debug.xcconfig */,
+				A608474649C44C5AE177B56D /* Pods-AVFoundationDemo.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		F1BC08731FCA89F4005C940B = {
@@ -63,6 +96,7 @@
 				F1BC087E1FCA89F4005C940B /* AVFoundationDemo */,
 				F1BC087D1FCA89F4005C940B /* Products */,
 				F1BC08931FCA9A0B005C940B /* Frameworks */,
+				53707686C28C081E598462B3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,13 +111,16 @@
 		F1BC087E1FCA89F4005C940B /* AVFoundationDemo */ = {
 			isa = PBXGroup;
 			children = (
-				1798168A2E064B26004A2553 /* Camera */,
+				179816922E064DB0004A2553 /* Model */,
+				179816952E065141004A2553 /* View */,
 				F1BC087F1FCA89F4005C940B /* AppDelegate.swift */,
-				F1BC08811FCA89F4005C940B /* ViewController.swift */,
+				179816902E064C9F004A2553 /* HomeBaseViewController.swift */,
+				F1BC08811FCA89F4005C940B /* HomeViewController.swift */,
 				F1BC08831FCA89F4005C940B /* Main.storyboard */,
 				F1BC08861FCA89F4005C940B /* Assets.xcassets */,
 				F1BC08881FCA89F4005C940B /* LaunchScreen.storyboard */,
 				F1BC088B1FCA89F4005C940B /* Info.plist */,
+				1798169B2E0651E0004A2553 /* ColorsConfiger.swift */,
 			);
 			path = AVFoundationDemo;
 			sourceTree = "<group>";
@@ -93,6 +130,7 @@
 			children = (
 				F1BC08961FCA9A1B005C940B /* Photos.framework */,
 				F1BC08941FCA9A0B005C940B /* AVFoundation.framework */,
+				25C36C5C62B16A010C718198 /* Pods_AVFoundationDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1BC088E1FCA89F4005C940B /* Build configuration list for PBXNativeTarget "AVFoundationDemo" */;
 			buildPhases = (
+				2B894798583F00A5A5E7FDE2 /* [CP] Check Pods Manifest.lock */,
 				F1BC08781FCA89F4005C940B /* Sources */,
 				F1BC08791FCA89F4005C940B /* Frameworks */,
 				F1BC087A1FCA89F4005C940B /* Resources */,
+				08AD068534DE91030EDF2430 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,7 +165,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0910;
-				ORGANIZATIONNAME = com.jimi.smile;
+				ORGANIZATIONNAME = smile;
 				TargetAttributes = {
 					F1BC087B1FCA89F4005C940B = {
 						CreatedOnToolsVersion = 9.1;
@@ -157,23 +197,70 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1BC088A1FCA89F4005C940B /* LaunchScreen.storyboard in Resources */,
+				1798169A2E065154004A2553 /* ABHEditInfoCell.xib in Resources */,
 				F1BC08871FCA89F4005C940B /* Assets.xcassets in Resources */,
 				F1BC08851FCA89F4005C940B /* Main.storyboard in Resources */,
-				1798168F2E064B53004A2553 /* CameraTestViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08AD068534DE91030EDF2430 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AVFoundationDemo/Pods-AVFoundationDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AVFoundationDemo/Pods-AVFoundationDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B894798583F00A5A5E7FDE2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AVFoundationDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F1BC08781FCA89F4005C940B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1798168B2E064B26004A2553 /* CameraController.swift in Sources */,
-				F1BC08821FCA89F4005C940B /* ViewController.swift in Sources */,
-				1798168E2E064B53004A2553 /* CameraTestViewController.swift in Sources */,
+				1798169C2E0651E0004A2553 /* ColorsConfiger.swift in Sources */,
+				179816992E065154004A2553 /* ABHEditInfoCell.swift in Sources */,
+				F1BC08821FCA89F4005C940B /* HomeViewController.swift in Sources */,
 				F1BC08801FCA89F4005C940B /* AppDelegate.swift in Sources */,
+				179816942E064DE5004A2553 /* HomeListCellModel.swift in Sources */,
+				179816912E064C9F004A2553 /* HomeBaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,13 +395,14 @@
 		};
 		F1BC088F1FCA89F4005C940B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B450911BCA905790F84CB06 /* Pods-AVFoundationDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20250621;
 				DEVELOPMENT_TEAM = UXHZJEX24R;
 				INFOPLIST_FILE = AVFoundationDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Smile.AVFoundationDemo;
@@ -326,13 +414,14 @@
 		};
 		F1BC08901FCA89F4005C940B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A608474649C44C5AE177B56D /* Pods-AVFoundationDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20250621;
 				DEVELOPMENT_TEAM = UXHZJEX24R;
 				INFOPLIST_FILE = AVFoundationDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Smile.AVFoundationDemo;

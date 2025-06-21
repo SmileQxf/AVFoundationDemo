@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import Photos
+import SnapKit
 
-class ViewController: UIViewController {
+class HomeViewController: HomeBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
