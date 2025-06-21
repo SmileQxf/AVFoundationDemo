@@ -22,7 +22,8 @@ class AVAudioEngineDemoViewController: AVBaseDemoViewController {
     @IBOutlet weak var progressSlider: UISlider!
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
-
+    
+    @IBOutlet weak var meterView: VolumeMeterView!
     
     private let engine = AVAudioEngine()
     private let player = AVAudioPlayerNode()
@@ -167,11 +168,8 @@ class AVAudioEngineDemoViewController: AVBaseDemoViewController {
             bufferSize: 1024,
             format: format
         ) { [weak self] buffer, _ in
-            debugPrint("测试数据:\(buffer)")
             self?.connectVolumeTap(buffer) // 在这里处理实时音频数据
         }
-        
-        
         
     }
     
@@ -338,6 +336,9 @@ class AVAudioEngineDemoViewController: AVBaseDemoViewController {
         // 快退 10秒按钮
         backwardButton.setTitle("", for: .normal)
         backwardButton.setImage(UIImage.backward, for: .normal)
+                
+        meterView.backgroundColor = .red
+        
     }
     
     deinit {
@@ -368,3 +369,72 @@ extension AVAudioEngineDemoViewController: AVAudioPlayerDelegate {
         print("音频播放器结束中断player:\(player)  flags:\(flags)")
     }
 }
+
+
+
+
+
+class VolumeMeterView: UIView {
+    
+    // MARK: - 可配置属性
+    /// 音量条颜色
+    var barColor: UIColor = .systemBlue {
+        didSet { setNeedsDisplay() }
+    }
+    
+    /// 最大高度比例（相对于View高度）
+    var maxHeightRatio: CGFloat = 0.9 {
+        didSet { setNeedsDisplay() }
+    }
+    
+    /// 平滑过渡速度（0~1，越大越平滑）
+    var smoothing: CGFloat = 0.7 {
+        didSet { smoothing = min(max(smoothing, 0), 1) }
+    }
+    
+    // MARK: - 内部属性
+    private var currentLevel: CGFloat = 0
+    private var displayLink: CADisplayLink?
+    
+    // MARK: - 公开方法
+    /// 更新音量级别（0~1）
+    func updateLevel(_ newLevel: CGFloat) {
+        let clampedLevel = min(max(newLevel, 0), 1)
+        
+        // 平滑过渡（避免突变）
+        currentLevel = smoothing * currentLevel + (1 - smoothing) * clampedLevel
+        setNeedsDisplay()
+    }
+    
+    // MARK: - 生命周期
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+    
+    private func setup() {
+        backgroundColor = .clear
+    }
+    
+    override func draw(_ rect: CGRect) {
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        
+        // 计算音量条高度
+        let barHeight = bounds.height * maxHeightRatio * currentLevel
+        let barWidth = bounds.width
+        let barY = bounds.height - barHeight
+        
+        // 绘制圆角矩形
+        let barRect = CGRect(x: 0, y: barY, width: barWidth, height: barHeight)
+        let path = UIBezierPath(roundedRect: barRect, cornerRadius: barWidth / 4)
+        
+        context.setFillColor(barColor.cgColor)
+        path.fill()
+    }
+}
+

@@ -15,6 +15,7 @@
                 <outlet property="currentTimeLabel" destination="gNN-5I-6Ox" id="881-SU-znA"/>
                 <outlet property="durationLabel" destination="hEs-sc-rCZ" id="MPf-cO-JtA"/>
                 <outlet property="forwardButton" destination="CVe-bD-3CM" id="ihN-d2-cPR"/>
+                <outlet property="meterView" destination="VuG-qS-4jl" id="UMN-yr-w6f"/>
                 <outlet property="playOrPauseButton" destination="SXL-ku-JBU" id="3Am-0K-GfU"/>
                 <outlet property="progressSlider" destination="VUc-fl-MSn" id="MnJ-Fh-gnI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -88,10 +89,20 @@
                         <constraint firstAttribute="bottom" secondItem="SXL-ku-JBU" secondAttribute="bottom" constant="8" id="yXm-OU-lt9"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuG-qS-4jl" customClass="VolumeMeterView" customModule="AVFoundationDemo" customModuleProvider="target">
+                    <rect key="frame" x="171.66666666666666" y="524" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="Kcp-BE-Pdx"/>
+                        <constraint firstAttribute="height" constant="50" id="Lzd-yT-LeZ"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="VuG-qS-4jl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HgM-FG-Pt6"/>
+                <constraint firstItem="EMl-qg-9Or" firstAttribute="top" secondItem="VuG-qS-4jl" secondAttribute="bottom" constant="50" id="NOJ-oQ-vIq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EMl-qg-9Or" secondAttribute="trailing" id="bsV-iu-k5c"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="EMl-qg-9Or" secondAttribute="bottom" constant="30" id="t2c-Ya-NLH"/>
                 <constraint firstItem="EMl-qg-9Or" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xFJ-Ok-duS"/>
