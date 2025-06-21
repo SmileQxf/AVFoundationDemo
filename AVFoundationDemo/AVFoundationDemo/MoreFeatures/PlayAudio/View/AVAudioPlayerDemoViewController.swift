@@ -13,10 +13,11 @@ class AVAudioPlayerDemoViewController: AVBaseDemoViewController {
     
     /// 播放/暂停按钮
     @IBOutlet weak var playOrPauseButton: UIButton!
-    /// 上一曲按钮
-    @IBOutlet weak var previousPlayerButton: UIButton!
-    /// 下一曲按钮
-    @IBOutlet weak var nextPlayerButton: UIButton!
+    /// 快进 10秒按钮
+    @IBOutlet weak var forwardButton: UIButton!
+    /// 快退 10秒按钮
+    @IBOutlet weak var backwardButton: UIButton!
+    
     
     @IBOutlet weak var progressSlider: UISlider!
     @IBOutlet weak var currentTimeLabel: UILabel!
@@ -88,6 +89,45 @@ class AVAudioPlayerDemoViewController: AVBaseDemoViewController {
     }
     
     
+    /// 快进 10秒按钮
+    @IBAction func forwardBtnClick(_ sender: UIButton) {
+        guard let player = player else { return }
+        
+        // 快进10秒（不超过总时长）
+        let newTime = min(player.currentTime + 10, player.duration)
+        player.currentTime = newTime
+        
+        // 更新UI
+        progressSlider.value = Float(newTime / player.duration)
+        updateTimeLabels()
+        
+        // 如果原本是暂停状态，快进后保持暂停
+        if !isPlaying { return }
+        
+        // 如果原本在播放，继续播放
+        player.play()
+    }
+    
+    /// 快退 10秒按钮
+    @IBAction func backwardBtnClick(_ sender: UIButton) {
+        guard let player = player else { return }
+        
+        // 快退10秒（不小于0）
+        let newTime = max(player.currentTime - 10, 0)
+        player.currentTime = newTime
+        
+        // 更新UI
+        progressSlider.value = Float(newTime / player.duration)
+        updateTimeLabels()
+        
+        // 如果原本是暂停状态，快退后保持暂停
+        if !isPlaying { return }
+        
+        // 如果原本在播放，继续播放
+        player.play()
+    }
+    
+    
     private func setupProgressSlider() {
         progressSlider.value = 0
         // 按下时暂停播放
@@ -105,7 +145,6 @@ class AVAudioPlayerDemoViewController: AVBaseDemoViewController {
         if player.isPlaying {
             player.pause()
             
-            // isPlaying = false
             self.playOrPauseButton.setImage(UIImage.play, for: .normal)
             stopProgressTimer()
         }
@@ -181,6 +220,13 @@ class AVAudioPlayerDemoViewController: AVBaseDemoViewController {
         durationLabel.text = ""
         durationLabel.numberOfLines = 1
         durationLabel.adjustsFontSizeToFitWidth = true
+        
+        // 快进 10秒按钮
+        forwardButton.setTitle("", for: .normal)
+        forwardButton.setImage(UIImage.forward, for: .normal)
+        // 快退 10秒按钮
+        backwardButton.setTitle("", for: .normal)
+        backwardButton.setImage(UIImage.backward, for: .normal)
     }
     
     deinit {

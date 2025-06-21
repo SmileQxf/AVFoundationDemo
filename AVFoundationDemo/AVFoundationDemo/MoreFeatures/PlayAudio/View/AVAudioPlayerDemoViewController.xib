@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AVAudioPlayerDemoViewController" customModule="AVFoundationDemo" customModuleProvider="target">
             <connections>
+                <outlet property="backwardButton" destination="6Eg-TS-kB7" id="MC7-ey-yNF"/>
                 <outlet property="currentTimeLabel" destination="gNN-5I-6Ox" id="881-SU-znA"/>
                 <outlet property="durationLabel" destination="hEs-sc-rCZ" id="MPf-cO-JtA"/>
-                <outlet property="nextPlayerButton" destination="CVe-bD-3CM" id="T4H-uN-leO"/>
+                <outlet property="forwardButton" destination="CVe-bD-3CM" id="ihN-d2-cPR"/>
                 <outlet property="playOrPauseButton" destination="SXL-ku-JBU" id="3Am-0K-GfU"/>
-                <outlet property="previousPlayerButton" destination="6Eg-TS-kB7" id="1Uh-L6-kFj"/>
                 <outlet property="progressSlider" destination="VUc-fl-MSn" id="MnJ-Fh-gnI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -40,11 +40,17 @@
                             <rect key="frame" x="239" y="87" width="75" height="35"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <connections>
+                                <action selector="forwardBtnClick:" destination="-1" eventType="touchUpInside" id="oYQ-84-6IV"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Eg-TS-kB7">
                             <rect key="frame" x="79" y="87" width="75" height="35"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <connections>
+                                <action selector="backwardBtnClick:" destination="-1" eventType="touchUpInside" id="Zdf-LW-ue4"/>
+                            </connections>
                         </button>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VUc-fl-MSn">
                             <rect key="frame" x="58" y="32" width="277" height="31"/>
