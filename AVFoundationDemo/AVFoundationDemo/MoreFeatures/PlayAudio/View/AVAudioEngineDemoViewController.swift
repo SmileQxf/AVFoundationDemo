@@ -27,6 +27,8 @@ class AVAudioEngineDemoViewController: AVBaseDemoViewController {
     
     private let engine = AVAudioEngine()
     private let player = AVAudioPlayerNode()
+    private var audioFile: AVAudioFile?
+    
 
     var isPlaying = false
     var progressTimer: Timer?
@@ -65,6 +67,8 @@ class AVAudioEngineDemoViewController: AVBaseDemoViewController {
             debugPrint("播放失败, 创建AVAudioFile对象失败")
             return
         }
+        self.audioFile = audioFile
+        
         let format = audioFile.processingFormat
         
         let audioLengthSamples = audioFile.length
@@ -135,7 +139,7 @@ class AVAudioEngineDemoViewController: AVBaseDemoViewController {
             
             let avgPower = 20 * log10(rms)
             let meterLevel = self.scaledPower(power: avgPower)
-            debugPrint("---音量meterLevel:\(meterLevel)")
+            //debugPrint("---音量meterLevel:\(meterLevel)")
             DispatchQueue.main.async {
                 //self.meterLevel = self.isPlaying ? meterLevel : 0
                 self.meterView.updateLevel(CGFloat(meterLevel))
@@ -191,12 +195,12 @@ class AVAudioEngineDemoViewController: AVBaseDemoViewController {
             player.pause()
             
             disconnectVolumeTap()
-            //stopProgressTimer()
+            stopProgressTimer()
         } else {
             
             connectVolumeTap()
             player.play()
-            //startProgressTimer()
+            startProgressTimer()
         }
         
         sender.setImage(isPlaying ? UIImage.pause : UIImage.play, for: .normal)
@@ -302,14 +306,27 @@ class AVAudioEngineDemoViewController: AVBaseDemoViewController {
     
     @objc private func updateProgress() {
         
-//        progressSlider.value = Float(player.currentTime / player.duration)
-//        updateTimeLabels()
+        progressSlider.value = Float(currentTime() / duration())
+        updateTimeLabels()
+    }
+    
+    func currentTime() -> TimeInterval {
+        guard let lastRenderTime = player.lastRenderTime,
+              let playerTime = player.playerTime(forNodeTime: lastRenderTime) else {
+            return 0
+        }
+        return Double(playerTime.sampleTime) / playerTime.sampleRate
+    }
+    
+    func duration() -> TimeInterval {
+        guard let audioFile = audioFile else { return 0 }
+        return Double(audioFile.length) / audioFile.processingFormat.sampleRate
     }
     
     private func updateTimeLabels() {
         
-//        currentTimeLabel.text = formatTime(player.currentTime)
-//        durationLabel.text = formatTime(player.duration)
+        currentTimeLabel.text = formatTime(currentTime())
+        //durationLabel.text = formatTime(player.duration)
     }
     
     private func formatTime(_ time: TimeInterval) -> String {
